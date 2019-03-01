@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { d3 } from '../../d3.v4';
 
 @Component({
   selector: 'app-bargraph',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BargraphComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+  
   }
+  ngOnInit() {
+  
+  }
+  
 
 }

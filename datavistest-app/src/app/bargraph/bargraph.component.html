@@ -1,13 +1,41 @@
-<html>
-    <head>
-        <title>Learn D3.js</title>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-    </head>
-    <body>
-        <h1>Bar chart</h1>
-        
-        <svg class="barchart"></svg>
-        
-        <script src="bargraph.component.js"></script>
-    </body>
-</html>
+
+  <head>
+      <title>Learn D3.js</title>
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      
+  </head>
+  <body>
+      <h1>Bar chart</h1>
+      
+      <svg class="barchart"></svg>
+      
+      <script src="bargraph.component.js">
+             var dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
+
+var svgWidth = 500; 
+var svgHeight = 300
+var barPadding = 5;
+var barWidth = (svgWidth / dataset.length);
+
+
+var svg = d3.select('svg')
+    .attr("width", svgWidth)
+    .attr("height", svgHeight);
+    
+var barChart = svg.selectAll("rect")
+.data(dataset)
+.enter()
+.append("rect")
+.attr("y", function(d) {
+   return svgHeight - d 
+})
+.attr("height", function(d) { 
+  return d; 
+})
+.attr("width", barWidth - barPadding)
+.attr("transform", function (d, i) {
+  var translate = [barWidth * i, 0]; 
+  return "translate("+ translate +")";
+});
+          </script>
+  </body>
