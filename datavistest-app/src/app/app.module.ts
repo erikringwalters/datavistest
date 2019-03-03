@@ -5,15 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { BargraphComponent } from './bargraph/bargraph.component';
+import { MyChartComponent } from './my-chart/my-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BargraphComponent
+    BargraphComponent,
+    MyChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxChartsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
